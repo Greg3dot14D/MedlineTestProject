@@ -12,6 +12,7 @@ public class FakePageHelper extends DriverBasedHelper implements IFakePageHelper
 	}
 
 	public void testBlockTrack(){
+		//pages.fakePage.getBlock().getTrack().click();
 		pages.fakePage.getBlock().getTrack().moveDown();
 		//pages.fakePage.getTrack().moveDown();
 	}

@@ -115,21 +115,6 @@ public class HtmlElementLoader {
 		return createHtmlElement(clazz, elementToWrap, elementName);
 	}
 
-	public static <T extends HtmlElement> T createHtmlElement(Class<T> elementClass,
-			WebElement elementToWrap, String name, LocatorCorrector corrector) {
-		try {
-			T instance = newInstance(elementClass);
-			instance.setWrappedElement(elementToWrap);
-			instance.setName(name);
-			// Recursively initialize elements of the block
-			populatePageObject(instance, elementToWrap);
-			return instance;
-		} catch (NoSuchMethodException | InstantiationException | IllegalAccessException
-				| InvocationTargetException e) {
-			throw new HtmlElementsException(e);
-		}
-	}
-
 	public static <T extends HtmlElement> T createHtmlElement(Class<T> elementClass, WebElement elementToWrap,
 			String name) {
 		try {

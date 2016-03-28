@@ -2,10 +2,11 @@ package ru.greg3d.yandex.corrected.qatools.htmlelements.loader.decorator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.pagefactory.AbstractAnnotations;
 
 import ru.greg3d.factory.fielddecorator.CorrectedAbstractAnnotations;
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+//import ru.yandex.qatools.htmlelements.element.HtmlElement;
+//import ru.yandex.qatools.htmlelements.element.*;
 import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
 
 /**

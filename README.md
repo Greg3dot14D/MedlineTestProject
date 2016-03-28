@@ -1,2 +1,1 @@
-# MedlineTestProject
-MedlineTestProject
+# JavaWebDriverTrainingLesson3

@@ -1,14 +1,15 @@
 package ru.greg3d.factory.elements.html;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+
+//import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 public class JspTrack extends HtmlElement{
-
+	
 	@FindBy(css=".jspTrack")
 	private WebElement Track;
 	

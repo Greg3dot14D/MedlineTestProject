@@ -10,10 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
-//import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+
 import ru.greg3d.yandex.corrected.qatools.htmlelements.loader.decorator.CorrectedHtmlElementDecorator;
 import ru.greg3d.yandex.corrected.qatools.htmlelements.loader.decorator.CorrectedHtmlElementLocatorFactory;
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+//import ru.yandex.qatools.htmlelements.element.HtmlElement;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+
 import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 import ru.yandex.qatools.htmlelements.pagefactory.CustomElementLocatorFactory;
@@ -28,7 +30,7 @@ public class CorrectedHtmlElementLoader extends HtmlElementLoader {
 	public static void populatePageObject(Object page, SearchContext searchContext, LocatorCorrector corrector) {
 		populatePageObject(page, new CorrectedHtmlElementLocatorFactory(searchContext, corrector));
 	}
-	
+
 	public static <T extends HtmlElement> T createHtmlElement(Class<T> elementClass, WebDriver driverToWrap,
 			WebElement elementToWrap, String name, LocatorCorrector corrector) {
 		try {
@@ -43,5 +45,5 @@ public class CorrectedHtmlElementLoader extends HtmlElementLoader {
 				| InvocationTargetException e) {
 			throw new HtmlElementsException(e);
 		}
-	}	
+	}
 }

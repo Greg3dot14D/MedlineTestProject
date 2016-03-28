@@ -29,6 +29,8 @@ import org.openqa.selenium.logging.Logs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ru.greg3d.util.WaitUtils;
+
 import static org.mockito.Mockito.mock;
 
 import java.lang.reflect.InvocationHandler;
@@ -89,8 +91,10 @@ public class TracingFakeWebDriver implements WebDriver, JavascriptExecutor,
 //						}
 						try {
 							Object result = null;
-							if("findElement".equals(m))
+							if("findElement".equals(m)){
+								WaitUtils.delay(5000);
 								result = method.invoke(driver, fakeDriver.getById());
+							}
 							if (!("manage".equals(m))) {
 								LOG.debug(m + "(...) = {}", result);
 							}

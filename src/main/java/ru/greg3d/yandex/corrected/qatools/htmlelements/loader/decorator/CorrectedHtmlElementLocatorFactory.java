@@ -10,7 +10,6 @@ import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class CorrectedHtmlElementLocatorFactory extends HtmlElementLocatorFactory{
-	//private SearchContext searchContext;
 	private LocatorCorrector corrector;
 	
 	public CorrectedHtmlElementLocatorFactory(SearchContext searchContext) {

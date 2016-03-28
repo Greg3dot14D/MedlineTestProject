@@ -4,7 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.internal.WrapsElement;
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.*;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.lang.reflect.InvocationHandler;

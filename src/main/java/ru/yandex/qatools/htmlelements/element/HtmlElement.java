@@ -8,27 +8,15 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.internal.WrapsElement;
 
 import ru.yandex.qatools.htmlelements.element.Named;
 
-public class HtmlElement implements WebElement, WrapsElement, Named, WrapsDriver {
+public class HtmlElement implements WebElement, WrapsElement, Named {
     private WebElement wrappedElement;
     private String name;
-    private WebDriver wrappedDriver;
-
-    public void setWrappedDriver(WebDriver wrappedDriver) {
-        this.wrappedDriver = wrappedDriver;
-    }    
-    
-	@Override
-	public WebDriver getWrappedDriver() {
-		return wrappedDriver;
-	}
     
     @Override
     public WebElement getWrappedElement() {

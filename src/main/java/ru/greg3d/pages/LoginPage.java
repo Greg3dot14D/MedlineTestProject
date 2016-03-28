@@ -3,13 +3,19 @@ package ru.greg3d.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import ru.yandex.qatools.htmlelements.element.*;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+import ru.yandex.qatools.htmlelements.annotations.Timeout;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextBlock;
+//import ru.yandex.qatools.htmlelements.element.*;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class LoginPage extends AnyPage{
 	
 	@FindBy(id="UserName")
 	TextInput userInput;
 	
+	@Timeout(10)
 	@FindBy(id="Password")
 	TextInput passwordInput;
 	

@@ -3,8 +3,9 @@ package ru.greg3d.factory.elements.html;
 import org.openqa.selenium.support.FindBy;
 
 import ru.greg3d.factory.fielddecorator.model.Corrector;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.Button;
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+//import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 @Corrector(what="FAKE")
 public class ButtonsBlock extends HtmlElement{

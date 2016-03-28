@@ -3,9 +3,10 @@ package ru.greg3d.factory.elements.html;
 import org.openqa.selenium.support.FindBy;
 
 import ru.greg3d.util.Fields;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Button;
-import ru.yandex.qatools.htmlelements.element.HtmlElement;
+//import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.Select;
 
 public class DatePicker extends HtmlElement{
