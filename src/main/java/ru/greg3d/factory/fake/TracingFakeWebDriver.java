@@ -1,6 +1,6 @@
 package ru.greg3d.factory.fake;
 
-import org.mockito.Mock;
+//import org.mockito.Mock;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 
 import ru.greg3d.util.WaitUtils;
 
-import static org.mockito.Mockito.mock;
+//import static org.mockito.Mockito.mock;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -240,8 +240,9 @@ public class TracingFakeWebDriver implements WebDriver, JavascriptExecutor,
 			return ((TakesScreenshot) driver).getScreenshotAs(target);
 		}
 
-		throw new UnsupportedOperationException(
-				"Underlying driver instance does not support taking screenshots");
+//		throw new UnsupportedOperationException(
+//				"Underlying driver instance does not support taking screenshots");
+		return null;
 	}
 
 	public TargetLocator switchTo() {

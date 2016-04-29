@@ -14,8 +14,7 @@ import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.yandex.corrected.qatools.htmlelements.loader.decorator.CorrectedHtmlElementDecorator;
 import ru.greg3d.yandex.corrected.qatools.htmlelements.loader.decorator.CorrectedHtmlElementLocatorFactory;
 //import ru.yandex.qatools.htmlelements.element.HtmlElement;
-import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
-
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.MyHtmlElement;
 import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 import ru.yandex.qatools.htmlelements.pagefactory.CustomElementLocatorFactory;
@@ -24,14 +23,14 @@ public class CorrectedHtmlElementLoader extends HtmlElementLoader {
 
 	public static void populatePageObject(Object page, CustomElementLocatorFactory locatorFactory) {
 		PageFactory.initElements(
-				new CorrectedHtmlElementDecorator(locatorFactory, ((HtmlElement) page).getWrappedDriver()), page);
+				new CorrectedHtmlElementDecorator(locatorFactory, ((MyHtmlElement) page).getWrappedDriver()), page);
 	}
 
 	public static void populatePageObject(Object page, SearchContext searchContext, LocatorCorrector corrector) {
 		populatePageObject(page, new CorrectedHtmlElementLocatorFactory(searchContext, corrector));
 	}
 
-	public static <T extends HtmlElement> T createHtmlElement(Class<T> elementClass, WebDriver driverToWrap,
+	public static <T extends MyHtmlElement> T createHtmlElement(Class<T> elementClass, WebDriver driverToWrap,
 			WebElement elementToWrap, String name, LocatorCorrector corrector) {
 		try {
 			T instance = newInstance(elementClass);

@@ -2,8 +2,8 @@ package ru.greg3d.pages;
 
 import org.openqa.selenium.support.FindBy;
 
-import ru.greg3d.factory.elements.html.FakeBlock;
-import ru.greg3d.factory.elements.html.JspTrack;
+import ru.greg3d.factory.htmlelements.FakeBlock;
+import ru.greg3d.factory.htmlelements.JspTrack;
 import ru.yandex.qatools.htmlelements.annotations.Timeout;
 
 public class FakePage extends AnyPage{

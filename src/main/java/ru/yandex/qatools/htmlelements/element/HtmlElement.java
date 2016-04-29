@@ -1,23 +1,61 @@
 package ru.yandex.qatools.htmlelements.element;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.internal.WrapsElement;
 
-import ru.yandex.qatools.htmlelements.element.Named;
+import java.util.List;
 
+/**
+ * The base class to be used for making blocks of elements.
+ * <p/>
+ * To make a class that will represent a block of elements (e.g. web form) create a descendant of this class,
+ * annotate it with {@link ru.yandex.qatools.htmlelements.annotations.Name} annotation if necessary
+ * and fill it with elements.
+ * <p/>
+ * For example:
+ * <p/>
+ * <pre class="code">
+ * &#64;Name("Search Form")
+ * &#64;Block(&#64;FindBy(css = "form_css"))
+ * public class SearchForm extends HtmlElement {
+ * &#64;Name("Request Input")
+ * &#64;FindBy(css = "request_input_css")
+ * private TextInput requestInput;
+ * <p/>
+ * &#64;Name("Search Button")
+ * &#64;FindBy(css = "search_button_css")
+ * private Button searchButton;
+ * <p/>
+ * public TextInput getRequestInput() {
+ * return requestInput;
+ * }
+ * <p/>
+ * public Button getSearchButton() {
+ * return searchButton;
+ * }
+ * }
+ * </pre>
+ * <p/>
+ * Then you can use created blocks as fields of page objects or you can also initialize them directly with methods of
+ * {@link ru.yandex.qatools.htmlelements.loader.HtmlElementLoader} class.
+ * <p/>
+ * Note that this class implements {@link WebElement} interface so you can substitute instances of your block classes
+ * for {@code WebElements} where it's necessary.
+ *
+ * @author Artem Eroshenko eroshenkoam@yandex-team.ru
+ * @author Artem Koshelev artkoshelev@yandex-team.ru
+ * @author Alexander Tolmachev starlight@yandex-team.ru
+ */
 public class HtmlElement implements WebElement, WrapsElement, Named {
     private WebElement wrappedElement;
     private String name;
-    
+
     @Override
     public WebElement getWrappedElement() {
         return wrappedElement;
@@ -46,21 +84,6 @@ public class HtmlElement implements WebElement, WrapsElement, Named {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * Determines whether or not this element exists on page.
-     *
-     * @return True if the element exists on page, false otherwise.
-     */
-    @SuppressWarnings("squid:S1166")  // Sonar "Exception handlers should preserve the original exception" rule
-    public boolean exists() {
-        try {
-            getWrappedElement().isDisplayed();
-        } catch (NoSuchElementException ignored) {
-            return false;
-        }
-        return true;
     }
 
     /**
@@ -243,5 +266,4 @@ public class HtmlElement implements WebElement, WrapsElement, Named {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

@@ -3,11 +3,12 @@ package ru.greg3d.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+//import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.annotations.Timeout;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.TextBlock;
-//import ru.yandex.qatools.htmlelements.element.*;
+
 import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class LoginPage extends AnyPage{
@@ -56,7 +57,8 @@ public class LoginPage extends AnyPage{
 	}	
 	
 	public boolean errorMessageIxExist(){
-		return this.errorMessage.exists();
+		//return this.errorMessage.exists();
+		return this.errorMessage.getWrappedElement().isDisplayed();
 	}		
 	
 }

@@ -7,6 +7,11 @@
 	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
+			<groupId>ru.yandex.qatools.htmlelements</groupId>
+			<artifactId>htmlelements-java</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
 			<groupId>ru.greg3d</groupId>
 			<artifactId>sqljdbc42</artifactId>
 			<version>1.0.0</version>
@@ -37,7 +42,7 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.10.19</version>
-			<scope>test</scope>
+			<!--scope>test</scope-->
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -89,11 +94,37 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
-				<configuration>
+					<configuration>
+			          <suiteXmlFiles>
+			            <file>src/test/resources/testng_medline_single_firefox.xml</file>
+			            <file>src/test/resources/testng_medline_single_chrome.xml</file>
+			          </suiteXmlFiles>
+			          <properties>
+			            <property>
+			              <name>suitethreadpoolsize</name>
+			              <value>2</value>
+			            </property>
+			          </properties>
+		        	</configuration>	
+				<!--configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/testng_medline.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/testng_fake.xml</suiteXmlFile>
 					</suiteXmlFiles>
-				</configuration>
+				</configuration-->
+		        <!-- configuration>
+		          <suiteXmlFiles>
+		            <file>src/test/resources/testng1.xml</file>
+		            <file>src/test/resources/testng2.xml</file>
+		          </suiteXmlFiles>
+		          <properties>
+		            <property>
+		              <name>suitethreadpoolsize</name>
+		              <value>2</value>
+		            </property>
+		          </properties>
+		        </configuration-->				
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -113,7 +144,7 @@
 				<env>remote_firefox</env>
 				<user.username>root</user.username>
 				<user.password></user.password>
-				<!-- grid2.hub>http://192.168.1.84:4444/wd/hub</grid2.hub-->
+				<!-- grid2.hub>http://192.168.1.84:4444/wd/hub</grid2.hub -->
 				<site.url>http://192.168.1.84/php4dvd</site.url>
 				<capabilities.json>capabilities.json</capabilities.json>
 			</properties>

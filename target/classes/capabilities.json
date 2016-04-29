@@ -28,8 +28,7 @@
 	},
 	
 	"chrome":{
-		  "browserName": "chrome",
-          "platform":"WINDOWS"
+		  "browserName": "chrome"
 	}
 	,
 	

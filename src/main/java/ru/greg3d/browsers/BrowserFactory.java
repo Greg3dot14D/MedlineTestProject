@@ -1,8 +1,7 @@
 package ru.greg3d.browsers;
 
 import java.awt.Toolkit;
-//import java.net.MalformedURLException;
-//import java.net.URL;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
@@ -15,7 +14,6 @@ import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import ru.greg3d.factory.fake.fakeDriver;
 import ru.greg3d.util.CapabilitiesLoader;
 import ru.greg3d.util.PropertyLoader;
 import ru.greg3d.util.WaitUtils;
@@ -33,13 +31,16 @@ public class BrowserFactory {
 	public static WebDriver getBrowser(String capabilitiesName) {
 		WebDriver driver;
 
-//		if(capabilitiesName.toLowerCase().equals("fake"))
-//			return fakeDriver.getDriver();
-		
 		String capabilitiesJsonFile = PropertyLoader.loadProperty("capabilities.json");
 
-		DesiredCapabilities cap = CapabilitiesLoader.loadCapabilities(
-				BrowserFactory.class.getResource("/" + capabilitiesJsonFile).getFile(), capabilitiesName);
+		DesiredCapabilities cap = null;
+		try {
+			cap = CapabilitiesLoader.loadCapabilities(
+					BrowserFactory.class.getResource("/" + capabilitiesJsonFile).getFile(), capabilitiesName);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
 
 		cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 		/* Под Linux Firefox не умеет корректно обрабатывать нативные события 
@@ -89,7 +90,10 @@ public class BrowserFactory {
 	public static WebDriver init(DesiredCapabilities capabilities){
 		WebDriver driver = null;
 
+		
+		//String gridHubUrl = "";
 		String gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
+		
 		//String browserVersion = PropertyLoader.loadProperty("browser.version");
 		//String platform = PropertyLoader.loadProperty("browser.platform");
 		//String browserName = PropertyLoader.loadProperty("browser.name");

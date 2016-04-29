@@ -5,8 +5,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import ru.greg3d.factory.container.AbstractContainer;
-
 /**
  * Annotation that is used to set a corrector for a block of elements or for an element in a block
  * or for a page object element.

@@ -2,7 +2,6 @@ package ru.yandex.qatools.htmlelements.loader.decorator;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.internal.Locatable;
-import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.internal.WrapsElement;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
@@ -18,7 +17,6 @@ import java.util.List;
 public class ProxyFactory {
     public static <T extends WebElement> T createWebElementProxy(ClassLoader loader, InvocationHandler handler) {
         Class<?>[] interfaces = new Class[]{WebElement.class, WrapsElement.class, Locatable.class};
-    	//Class<?>[] interfaces = new Class[]{WebElement.class, WrapsElement.class, Locatable.class, WrapsDriver.class};
         return (T) Proxy.newProxyInstance(loader, interfaces, handler);
     }
 

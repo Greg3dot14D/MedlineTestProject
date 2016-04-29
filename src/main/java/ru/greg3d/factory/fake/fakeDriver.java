@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 public class fakeDriver {
 	private WebDriver driver = mock(WebDriver.class);
 	private WebElement element = mock(WebElement.class);
+	@SuppressWarnings("unchecked")
 	private List<WebElement> elements = mock(ArrayList.class);
 	
 	private static final By byId = By.id("fake");

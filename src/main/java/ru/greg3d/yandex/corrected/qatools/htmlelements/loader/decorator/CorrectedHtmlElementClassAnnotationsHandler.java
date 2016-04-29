@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 import ru.greg3d.factory.fielddecorator.CorrectedAbstractAnnotations;
-import ru.greg3d.yandex.corrected.qatools.htmlelements.element.HtmlElement;
+import ru.greg3d.yandex.corrected.qatools.htmlelements.element.MyHtmlElement;
 //import ru.yandex.qatools.htmlelements.element.HtmlElement;
 //import ru.yandex.qatools.htmlelements.element.*;
 import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
@@ -15,7 +15,7 @@ import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
  * @author Alexander Tolmachev starlight@yandex-team.ru
  *         Date: 20.08.12
  */
-public class CorrectedHtmlElementClassAnnotationsHandler<T extends HtmlElement> extends CorrectedAbstractAnnotations {
+public class CorrectedHtmlElementClassAnnotationsHandler<T extends MyHtmlElement> extends CorrectedAbstractAnnotations {
     private final Class<T> elementClass;
 
     public CorrectedHtmlElementClassAnnotationsHandler(Class<T> elementClass) {

@@ -2,12 +2,14 @@ package ru.greg3d.pages;
 
 import org.openqa.selenium.support.FindBy;
 
-import ru.greg3d.factory.elements.html.ButtonsBlock;
-import ru.greg3d.factory.elements.html.CalendarPanel;
-import ru.greg3d.factory.elements.html.DatePicker;
-import ru.greg3d.factory.elements.html.FiltersByStatesContainer;
-import ru.greg3d.factory.elements.html.GridPager;
-import ru.greg3d.factory.elements.html.JspTrack;
+import ru.greg3d.factory.htmlelements.ButtonsBlock;
+import ru.greg3d.factory.htmlelements.CalendarPanel;
+import ru.greg3d.factory.htmlelements.DatePicker;
+import ru.greg3d.factory.htmlelements.FiltersByStatesContainer;
+import ru.greg3d.factory.htmlelements.Grid;
+import ru.greg3d.factory.htmlelements.GridPager;
+import ru.greg3d.factory.htmlelements.JspTrack;
+import ru.greg3d.factory.dialogs.Colchooser;
 import ru.greg3d.factory.fielddecorator.model.Corrector;
 
 public class AllDocumentsPage extends AnyPage {
@@ -33,6 +35,19 @@ public class AllDocumentsPage extends AnyPage {
 	@FindBy(id="ui-datepicker-div")
 	private DatePicker datePicker;
 	
+	@FindBy(css=".ui-draggable")
+	public Colchooser colchooser;
+	
+	
+	@Corrector(than="Docs")
+	@FindBy(css=".grid-wrapper")
+	private Grid grid;
+	
+	
+	public Grid getGrid(){
+		return grid;
+	}
+	
 	public AllDocumentsPage(PageManager pages) {
 		super(pages);
 	}
@@ -41,7 +56,7 @@ public class AllDocumentsPage extends AnyPage {
 		return this.calendar;
 	}
 	
-	public DatePicker getdatePicker(){
+	public DatePicker getDatePicker(){
 		return this.datePicker;
 	}
 	

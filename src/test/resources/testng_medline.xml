@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--suite name="Tests" verbose="5" data-provider-thread-count="1"-->
+    <suite name="Tests" verbose="3" parallel="tests" thread-count="2">
+	<test verbose="2" name="Test_1">
+		<parameter name="path" value="/"/>
+		<parameter name="capabilities" value="chrome"/>
+		<classes>
+		    <class name="ru.greg3d.loginTest"/>
+		</classes>
+	</test>
+	<test verbose="2" name="Test_2">
+		<parameter name="path" value="/"/>
+		<parameter name="capabilities" value="firefox"/>		
+		<classes>
+		    <class name="ru.greg3d.loginTest"/>
+		</classes>
+	</test> 
+</suite>

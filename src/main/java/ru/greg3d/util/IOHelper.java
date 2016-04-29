@@ -41,18 +41,16 @@ public class IOHelper {
 		return sb.toString();
 	}
 	
-	public static String readFileToString18(String fileName, String encoding){
-		
-		String retValue = "";
+	public static String readFileToString18(String fileName, String encoding) throws IOException{
 		
 		try {
-			retValue = Files.lines(Paths.get(fileName.substring(1)), Charset.forName(encoding))
+			return Files.lines(Paths.get(fileName.substring(1)), Charset.forName(encoding))
 							.reduce((s1, s2)-> s1+"\n" + s2)
 							.get();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			throw e;
 		}
-		return retValue;
 	}
 }

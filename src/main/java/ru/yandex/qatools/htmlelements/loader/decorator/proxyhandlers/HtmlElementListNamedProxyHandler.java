@@ -37,7 +37,6 @@ public class HtmlElementListNamedProxyHandler<T extends HtmlElement> implements 
         int elementNumber = 0;
         for (WebElement element : locator.findElements()) {
             String newName = String.format("%s [%d]", name, elementNumber++);
-            //elements.add(createHtmlElement(elementClass, element, newName));
             elements.add(createHtmlElement(elementClass, element, newName));
         }
 

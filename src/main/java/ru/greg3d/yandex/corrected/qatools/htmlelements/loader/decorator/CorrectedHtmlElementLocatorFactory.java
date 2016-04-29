@@ -11,15 +11,18 @@ import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory
 
 public class CorrectedHtmlElementLocatorFactory extends HtmlElementLocatorFactory{
 	private LocatorCorrector corrector;
+	private SearchContext searchContext;
 	
 	public CorrectedHtmlElementLocatorFactory(SearchContext searchContext) {
 		super(searchContext);
 		this.corrector = new LocatorCorrector();
+		this.searchContext = searchContext;
 	}	
 	
 	public CorrectedHtmlElementLocatorFactory(SearchContext searchContext, LocatorCorrector corrector) {
 		super(searchContext);
 		this.corrector = corrector;
+		this.searchContext = searchContext;
 	}
 	
 	public ElementLocator createLocator(Field field) {

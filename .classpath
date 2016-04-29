@@ -42,7 +42,11 @@
 	<classpathentry kind="var" path="M2_REPO/org/seleniumhq/selenium/selenium-remote-driver/2.51.0/selenium-remote-driver-2.51.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/seleniumhq/selenium/selenium-api/2.51.0/selenium-api-2.51.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/seleniumhq/selenium/selenium-api/2.51.0/selenium-api-2.51.0.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="var" path="M2_REPO/com/google/guava/guava/19.0/guava-19.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar"/>
@@ -94,5 +98,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Microsoft JDBC Driver 4.2 for SQL Server/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="C:/MAVEN/MedlineTestProject/lib/commons-lang3-3.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

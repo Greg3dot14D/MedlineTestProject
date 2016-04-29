@@ -32,7 +32,7 @@ public class CorrectedProxyFactory {
         return (List<T>) Proxy.newProxyInstance(loader, new Class[]{List.class}, handler);
     }
 
-    public static <T extends HtmlElement> List<T> createHtmlElementListProxy(ClassLoader loader,
+    public static <T extends MyHtmlElement> List<T> createHtmlElementListProxy(ClassLoader loader,
                                                                              InvocationHandler handler) {
         return (List<T>) Proxy.newProxyInstance(loader, new Class[]{List.class}, handler);
     }

@@ -1,27 +1,22 @@
 package ru.yandex.qatools.htmlelements.utils;
 
-import static org.apache.commons.lang3.reflect.ConstructorUtils.invokeConstructor;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.net.URL;
-import java.util.List;
+import com.google.common.collect.Lists;
 
 import org.apache.commons.lang3.text.WordUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
-
-import com.google.common.collect.Lists;
-
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 import ru.yandex.qatools.htmlelements.exceptions.HtmlElementsException;
+
+import java.lang.reflect.*;
+import java.net.URL;
+import java.util.List;
+
+import static org.apache.commons.lang3.reflect.ConstructorUtils.invokeConstructor;
 
 /**
  * Contains utility methods used in framework.
@@ -131,7 +126,8 @@ public final class HtmlElementUtils {
     }
 
     private static String splitCamelCase(String camel) {
-        return WordUtils.capitalizeFully(camel.replaceAll(
+        return
+        		WordUtils.capitalizeFully(camel.replaceAll(
                 String.format("%s|%s|%s",
                         "(?<=[A-Z])(?=[A-Z][a-z])",
                         "(?<=[^A-Z])(?=[A-Z])",

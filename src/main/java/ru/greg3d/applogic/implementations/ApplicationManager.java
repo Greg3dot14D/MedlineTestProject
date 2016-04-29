@@ -70,7 +70,8 @@ public class ApplicationManager implements IApplicationManager {
 		return allDocumentsPageHelper;
 	}
 
-	protected WebDriver getWebDriver() {
+//	protected WebDriver getWebDriver() {
+	public WebDriver getWebDriver() {
 		return driver;
 	}
 
